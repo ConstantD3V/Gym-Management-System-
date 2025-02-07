@@ -1,0 +1,85 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:choose_member",
+ "creation": "2025-01-31 15:50:34.515037",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "choose_member",
+  "choose_lock",
+  "lock_fees",
+  "amended_from",
+  "verify_lock"
+ ],
+ "fields": [
+  {
+   "fieldname": "choose_member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Choose Member",
+   "options": "Gym Registration",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "choose_lock",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Choose a Locker",
+   "link_filters": "[[\"Locker Collection\",\"sel_status\",\"=\",\"Available\"]]",
+   "options": "Locker Collection"
+  },
+  {
+   "fieldname": "lock_fees",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Locker Fee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Lock Booking",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "choose_member.check_loc",
+   "fieldname": "verify_lock",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "verification"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-02-03 12:31:07.027495",
+ "modified_by": "Administrator",
+ "module": "Gym",
+ "name": "Lock Booking",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

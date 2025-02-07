@@ -1,0 +1,55 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-01-27 13:03:03.452548",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "column_break_ydlr",
+  "choose_class",
+  "dur_per",
+  "schedule"
+ ],
+ "fields": [
+  {
+   "fieldname": "choose_class",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Choose Class",
+   "options": "\nYOGA\nBOXING\nMMA\nAEROBICS",
+   "reqd": 1
+  },
+  {
+   "fieldname": "schedule",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Preferred Schedule",
+   "options": "\nMorning\nAfternoon\nEvening",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ydlr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dur_per",
+   "fieldtype": "Select",
+   "label": "Duration Period",
+   "options": "\n1 Month\n3 Months\n6 Months",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-01-30 16:44:05.081080",
+ "modified_by": "Administrator",
+ "module": "Gym",
+ "name": "Gym classes",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

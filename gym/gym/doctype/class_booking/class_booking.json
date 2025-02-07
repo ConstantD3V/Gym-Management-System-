@@ -1,0 +1,117 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:meb_name",
+ "creation": "2025-01-27 16:19:16.121799",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_tzvn",
+  "member_details_column",
+  "meb_name",
+  "class_book",
+  "class_dur",
+  "str_date",
+  "fin_price",
+  "col_brk_10",
+  "verify",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_tzvn",
+   "fieldtype": "Section Break",
+   "label": "Book your class"
+  },
+  {
+   "fieldname": "meb_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Member Name",
+   "options": "Gym Registration",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "class_book",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Choose Class",
+   "options": "\nYOGA\nBOXING\nMMA\nAEROBICS"
+  },
+  {
+   "fieldname": "str_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "class_dur",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Class Duration",
+   "options": "\n1 Month\n3 Months\n6 Months"
+  },
+  {
+   "bold": 1,
+   "fieldname": "fin_price",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Total Price",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_brk_10",
+   "fieldtype": "Column Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "member_details_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "meb_name.check_class",
+   "fieldname": "verify",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Verify existing or not"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Class Booking",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-01-31 15:44:49.171869",
+ "modified_by": "Administrator",
+ "module": "Gym",
+ "name": "Class Booking",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

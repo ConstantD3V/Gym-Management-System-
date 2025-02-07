@@ -1,0 +1,89 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:meme_name",
+ "creation": "2025-01-27 16:50:37.570202",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_xiib",
+  "meme_name",
+  "chos_train",
+  "train_fee",
+  "amended_from",
+  "verify_train"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_xiib",
+   "fieldtype": "Section Break",
+   "label": "Book your Trainer"
+  },
+  {
+   "fieldname": "chos_train",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Choose Trainer",
+   "options": "Gym trainer"
+  },
+  {
+   "fieldname": "train_fee",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Trainer Fees / Month",
+   "read_only": 1
+  },
+  {
+   "fieldname": "meme_name",
+   "fieldtype": "Link",
+   "label": "Member Name",
+   "options": "Gym Registration",
+   "unique": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Trainer Booking",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "meme_name.choose_train",
+   "fieldname": "verify_train",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Verification "
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-01-31 15:44:24.600678",
+ "modified_by": "Administrator",
+ "module": "Gym",
+ "name": "Trainer Booking",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

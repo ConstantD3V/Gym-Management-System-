@@ -1,0 +1,103 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:train_name",
+ "creation": "2025-01-27 11:36:51.937744",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "trainer_info_section",
+  "train_name",
+  "train_num",
+  "train_age",
+  "train_gen",
+  "col_break_1",
+  "special_check",
+  "choice_special",
+  "train_img"
+ ],
+ "fields": [
+  {
+   "fieldname": "train_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Trainer Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "train_num",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Phone Number",
+   "length": 10,
+   "reqd": 1
+  },
+  {
+   "fieldname": "train_age",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Age ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "train_gen",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Gender",
+   "options": "Male\nFemale",
+   "reqd": 1
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "train_img",
+   "fieldtype": "Attach Image",
+   "label": "Trainer Image"
+  },
+  {
+   "fieldname": "trainer_info_section",
+   "fieldtype": "Section Break",
+   "label": "Trainer Info"
+  },
+  {
+   "default": "0",
+   "fieldname": "special_check",
+   "fieldtype": "Check",
+   "label": "Specialized coaching"
+  },
+  {
+   "fieldname": "choice_special",
+   "fieldtype": "Select",
+   "label": "Choose Specialization",
+   "options": "\nYOGA\nBOXING\nMMA\nAEROBICS"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-31 12:41:49.920794",
+ "modified_by": "Administrator",
+ "module": "Gym",
+ "name": "Gym trainer",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

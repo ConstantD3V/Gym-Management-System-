@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offered Plans</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            --text-color: #333;
+            --box-bg: rgba(255, 255, 255, 0.8);
+            --button-bg: #007bff;
+            --button-hover: #0056b3;
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        body.dark-mode {
+            --bg-color: linear-gradient(135deg, #1e1e1e, #121212);
+            --text-color: white;
+            --box-bg: rgba(30, 30, 30, 0.8);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            transition: background 0.3s, color 0.3s;
+        }
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #a8c0ff, #3f2b96);
+            color: white;
+            padding: 15px 20px;
+            position: relative;
+        }
+        .home-button {
+            position: absolute;
+            left: 20px;
+            font-size: 2rem;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .home-button:hover {
+            color: #007bff;
+        }
+        h1 {
+            margin: 0;
+        }
+        .plans-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .plan-box {
+            background: var(--box-bg);
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: var(--glass-shadow);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        body.dark-mode .plan-box {
+            background: rgba(50, 50, 50, 0.8);
+        }
+        .plan-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        .plan-box h3 {
+            margin-bottom: 10px;
+        }
+        .plan-box p {
+            margin-bottom: 15px;
+        }
+        .plan-box .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--button-bg);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .btn:hover {
+            background-color: var(--button-hover);
+            transform: scale(1.05);
+        }
+        footer {
+            background: linear-gradient(135deg, #a8c0ff, #3f2b96);
+            color: white;
+            padding: 5px;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+        .toggle-switch {
+            cursor: pointer;
+            width: 50px;
+            height: 25px;
+            background: var(--box-bg);
+            border-radius: 15px;
+            position: relative;
+            box-shadow: var(--glass-shadow);
+        }
+        .toggle-switch::after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: var(--button-bg);
+            position: absolute;
+            top: 2.5px;
+            left: 3px;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+        body.dark-mode .toggle-switch::after {
+            left: 27px;
+        }
+        .original-price {
+        text-decoration: line-through;
+        font-size: 1.5rem;
+        color: #007bff;
+        margin-bottom: 5px;
+        }
+        .discounted-price {         
+        background: linear-gradient(45deg, #ff6a00, #ee0979, #ff00d7);
+        -webkit-background-clip: text;
+        color: transparent;   
+        font-size: 1.9rem;
+        font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .plans-container {
+                grid-template-columns: 1fr;
+            }
+            header {
+                padding: 10px 15px;
+                text-align: center;
+            }
+            .toggle-container {
+                position: static;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="home.html" class="home-button"><i class="fas fa-home"></i></a>
+        <h1>Offered Plans</h1>
+        <div class="toggle-container">
+            <div class="toggle-switch" onclick="toggleDarkMode()"></div>
+        </div>
+    </header>
+
+    <div class="plans-container">
+        <div class="plan-box">
+            <h3>Beginner Plan</h3>
+            <p>Perfect for those new to fitness. Includes basic exercises and a simple diet plan.</p>
+            <div class="price">3000INR / month</div>
+            <p>Or u can save more by choosing our 1 year plan</p>
+            <div class="original-price">13000INR / year</div> 
+            <div class="discounted-price">11700INR / year</div><br>
+            <a href="plan_details/beginner.html" class="btn">Learn More</a>
+        </div>
+        <div class="plan-box">
+            <h3>Intermediate Plan</h3>
+            <p>Includes moderate exercises and a balanced diet plan.</p>
+            <div class="price">4000 INR / month</div>
+            <p>Or u can save more by choosing our 1 year plan</p>
+            <div class="original-price">16000INR / year</div> 
+            <div class="discounted-price">14400INR / year</div><br>
+            <a href="plan_details/intermediate.html" class="btn">Learn More</a>
+        </div>
+        <div class="plan-box">
+            <h3>Advanced Plan</h3>
+            <p>Includes advanced exercises and a strict diet plan.</p>
+            <div class="price">8000 INR / month</div>
+            <p>Or u can save more by choosing our 1 year plan</p>
+            <div class="original-price">17500INR / year</div> 
+            <div class="discounted-price">15750INR / year</div><br>
+            <a href="plan_details/advanced.html" class="btn"> Learn More</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>

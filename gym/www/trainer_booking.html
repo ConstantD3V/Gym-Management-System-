@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer Booking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            --text-color: #333;
+            --box-bg: rgba(255, 255, 255, 0.8);
+            --button-bg: #007bff;
+            --button-hover: #0056b3;
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        body.dark-mode {
+            --bg-color: linear-gradient(135deg, #1e1e1e, #121212);
+            --text-color: white;
+            --box-bg: rgba(30, 30, 30, 0.8);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--bg-color);
+            color: var(--text-color);
+            transition: background 0.3s, color 0.3s;
+            min-height: 100vh;
+        }
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #a8c0ff, #3f2b96);
+            color: white;
+            padding: 1px 1px;
+            position: relative;
+        }
+        .home-button {
+            position: absolute;
+            left: 20px;
+            font-size: 2rem;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .home-button:hover {
+            color: #007bff;
+        }
+        .dark-mode-toggle {
+            position: absolute;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(200, 200, 200, 0.8));
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: var(--glass-shadow);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        body.dark-mode .box {
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.8), rgba(50, 50, 50, 0.8));
+        }
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        .box i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--button-bg);
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--button-bg);
+            color: white;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+            font-weight: 500;
+        }
+        .btn:hover {
+            background-color: var(--button-hover);
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../home.html" class="home-button"><i class="fas fa-home"></i></a>
+        <h1>Trainer Booking</h1>
+        <i class="fas fa-moon dark-mode-toggle" id="darkModeToggle"></i>
+    </header>
+    <div class="container">
+        <div class="box">
+            <i class="fas fa-calendar-alt"></i>
+            <h2>Book Your Trainer</h2>
+            <p>Choose a professional trainer and book your session.</p>
+            <a href="http://192.168.0.62:8000/app/trainer-booking/new-trainer-booking" class="btn">Book Now</a>
+        </div>
+        <div class="box">
+            <i class="fas fa-star"></i>
+            <h2>Rate Your Trainer</h2>
+            <p>Rate and review your trainer based on your experience.</p>
+            <a href="http://192.168.0.62:8000/app/trainer-feedback/new-trainer-feedback" class="btn">Rate Now</a>
+        </div>
+    </div>
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>

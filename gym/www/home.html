@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Home Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            --text-color: #333;
+            --box-bg: rgba(255, 255, 255, 0.8);
+            --button-bg: #007bff;
+            --button-hover: #0056b3;
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        body.dark-mode {
+            --bg-color: linear-gradient(135deg, #1e1e1e, #121212);
+            --text-color: white;
+            --box-bg: rgba(30, 30, 30, 0.8);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--bg-color);
+            color: var(--text-color);
+            transition: background 0.3s, color 0.3s;
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(135deg, #a8c0ff, #3f2b96); /* Faded blue gradient */
+            color: white;
+            padding: 15px 20px;
+            text-align: left;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 0 0 15px 15px;
+        }
+        .toggle-container {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+        .toggle-switch {
+            cursor: pointer;
+            width: 50px;
+            height: 25px;
+            background: var(--box-bg);
+            border-radius: 15px;
+            position: relative;
+            box-shadow: var(--glass-shadow);
+        }
+        .toggle-switch::after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: var(--button-bg);
+            position: absolute;
+            top: 2.5px;
+            left: 3px;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+        body.dark-mode .toggle-switch::after {
+            left: 27px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(200, 200, 200, 0.8));
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: var(--glass-shadow);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        body.dark-mode .box {
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.8), rgba(50, 50, 50, 0.8));
+        }
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        .box i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--button-bg);
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--button-bg);
+            color: white;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+            font-weight: 500;
+        }
+        .btn:hover {
+            background-color: var(--button-hover);
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #a8c0ff, #3f2b96);
+            color: white;
+            padding: 5px;
+            text-align: center;
+            margin-top: 5px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            header {
+                padding: 10px 15px;
+                text-align: center;
+            }
+            .toggle-container {
+                position: static;
+                margin-top: 10px;
+            }
+        }
+            .profile-icon {
+            display: block;
+            margin-top: 20px;
+            margin-right: -5.5px;
+            text-align: center;
+            font-size: 2.0rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .profile-icon:hover {
+            color: #f8f9fa;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Gym</h1>
+        <div class="toggle-container">
+            <div class="toggle-switch" onclick="toggleDarkMode()"></div>
+            <a href="profile.html" class="profile-icon">
+                <i class="fas fa-user-circle"></i>
+            </a>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="box">
+            <i class="fas fa-dumbbell"></i>
+            <h2>Gym Registration</h2>
+            <p>Start your fitness journey today!</p>
+            <a href="http://192.168.0.62:8000/app/gym-registration/new-gym-registration" class="btn">Register Now</a>
+        </div>
+        <div class="box">
+            <i class="fas fa-calendar-alt"></i>
+            <h2>Class Booking</h2>
+            <p>Book your favorite class and stay fit.</p>
+            <a href="http://192.168.0.62:8000/app/class-booking/new-class-booking" class="btn">Book Now</a>
+        </div>
+        <div class="box">
+            <i class="fas fa-user-tie"></i>
+            <h2>Trainer Info</h2>
+            <p>Learn about our professional trainers</p>
+            <a href="trainer_booking.html" class="btn">About Our Trainers</a>
+        </div>
+        <div class="box">
+            <i class="fas fa-lock"></i>
+            <h2>Locker Booking</h2>
+            <p>Reserve a locker for your belongings.</p>
+            <a href="http://192.168.0.62:8000/app/lock-booking/new-lock-booking" class="btn">Book Locker</a>
+        </div>
+        <div class="box">
+            <i class="fas fa-list-alt"></i>
+            <h2>Offered Plans</h2>
+            <p>Choose your fitness plans.</p>
+            <a href="plans.html" class="btn" >View Plans</a>
+        </div>
+        <div class="box">
+            <i class="fas fa-info-circle"></i>
+            <h2>Contact Us</h2>
+            <p>Reach out to us for any inquiries.</p>
+            <a href="contactus.html" class="btn">Contact Now</a>
+        </div>
+    </div>
+
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+    </script>
+</body>
+</html>

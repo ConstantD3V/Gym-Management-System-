@@ -1,0 +1,229 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:full_name",
+ "creation": "2025-01-27 10:15:53.479178",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "member_details_section",
+  "full_name",
+  "gender",
+  "age",
+  "emr_contact",
+  "addr",
+  "sec_break_1",
+  "choose_plan",
+  "check_weight",
+  "check_height",
+  "des_weight",
+  "sec_break_2",
+  "column_break_bupe",
+  "choose_train",
+  "check_loc",
+  "book_lock",
+  "book",
+  "book_class",
+  "col_break_1",
+  "fees_gym",
+  "trainer_fees",
+  "locker_fees",
+  "class_fee",
+  "disc",
+  "fin_price",
+  "amended_from",
+  "email"
+ ],
+ "fields": [
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Gender",
+   "options": "Male\nFemale",
+   "reqd": 1
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Age",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "length": 100,
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "addr",
+   "fieldtype": "Data",
+   "label": "Address",
+   "length": 150,
+   "reqd": 1
+  },
+  {
+   "fieldname": "sec_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 3,
+   "fieldname": "choose_plan",
+   "fieldtype": "Table",
+   "in_standard_filter": 1,
+   "label": "Choose Plan",
+   "options": "Membership Plan"
+  },
+  {
+   "fieldname": "check_weight",
+   "fieldtype": "Int",
+   "label": "Initial Weight (Kg)"
+  },
+  {
+   "fieldname": "check_height",
+   "fieldtype": "Int",
+   "label": "Height (cm)"
+  },
+  {
+   "fieldname": "des_weight",
+   "fieldtype": "Int",
+   "label": "Desired Weight (Kg)"
+  },
+  {
+   "fieldname": "sec_break_2",
+   "fieldtype": "Section Break",
+   "label": "Billing & Add-Ons"
+  },
+  {
+   "fieldname": "choose_train",
+   "fieldtype": "Link",
+   "label": "Choose Trainer (Optional)",
+   "options": "Gym trainer"
+  },
+  {
+   "fieldname": "emr_contact",
+   "fieldtype": "Int",
+   "label": "Emergency Contact",
+   "length": 11
+  },
+  {
+   "default": "0",
+   "fieldname": "check_loc",
+   "fieldtype": "Check",
+   "in_standard_filter": 1,
+   "label": "Book a Locker?"
+  },
+  {
+   "columns": 3,
+   "default": "0",
+   "fieldname": "book",
+   "fieldtype": "Check",
+   "in_standard_filter": 1,
+   "label": "Book a Class?",
+   "options": "Gym classes"
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fees_gym",
+   "fieldtype": "Int",
+   "label": "Gym Plan Fees"
+  },
+  {
+   "fieldname": "trainer_fees",
+   "fieldtype": "Int",
+   "label": "Trainer Fees (if applicable)"
+  },
+  {
+   "fieldname": "disc",
+   "fieldtype": "Percent",
+   "label": "Discount (%) "
+  },
+  {
+   "fieldname": "fin_price",
+   "fieldtype": "Int",
+   "label": "FInal Price"
+  },
+  {
+   "fieldname": "member_details_section",
+   "fieldtype": "Section Break",
+   "label": "Member Details"
+  },
+  {
+   "fieldname": "column_break_bupe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "class_fee",
+   "fieldtype": "Int",
+   "label": "Class Fees (if applicable)"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gym Registration",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "book_lock",
+   "fieldtype": "Link",
+   "label": "Book Your Locker",
+   "options": "Locker Collection"
+  },
+  {
+   "fieldname": "book_class",
+   "fieldtype": "Table",
+   "label": "Book Your Class",
+   "options": "Gym classes"
+  },
+  {
+   "fieldname": "locker_fees",
+   "fieldtype": "Int",
+   "label": "Locker Fees"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-02-05 12:28:12.183253",
+ "modified_by": "Administrator",
+ "module": "Gym",
+ "name": "Gym Registration",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,89 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "RATING .####",
+ "creation": "2025-01-31 17:24:46.205134",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_rvnr",
+  "exist_mem",
+  "assign_train",
+  "rate_your_trainer",
+  "verify_trainer",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_rvnr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "exist_mem",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Existing Member",
+   "no_copy": 1,
+   "options": "Gym Registration",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "exist_mem.book_train",
+   "fieldname": "assign_train",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Assigned Trainer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rate_your_trainer",
+   "fieldtype": "Rating",
+   "label": "Rate your trainer"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Trainer Feedback",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "exist_mem.choose_train",
+   "fieldname": "verify_trainer",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "verify"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-02-05 17:22:36.646079",
+ "modified_by": "Administrator",
+ "module": "Gym",
+ "name": "Trainer Feedback",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

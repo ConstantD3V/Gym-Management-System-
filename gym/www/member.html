@@ -1,0 +1,10 @@
+{% if gym_member %}
+    <div class="profile-container">
+        <h2>Gym Profile</h2>
+        <p><strong>Member Name:</strong> {{ gym_member.membr_name }}</p>
+        <p><strong>Assigned Trainer:</strong> {{ gym_member.train_assigned or "Not Assigned" }}</p>
+        <p><strong>Remaining Days:</strong> {{ gym_member.rem_days }}</p>
+    </div>
+{% else %}
+    <p>No Gym Membership found for this account.</p>
+{% endif %}
