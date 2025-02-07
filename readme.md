@@ -1,2 +1,2 @@
-![Output Screenshot](gym/Output/screenshot.png)
+![Output Screenshot](Output/screenshot.png)
 
